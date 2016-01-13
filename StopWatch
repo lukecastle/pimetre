@@ -1,0 +1,20 @@
+from sense_hat import SenseHat
+
+sense = SenseHat()
+
+import time
+
+pimetre=input("How many seconds whould you like to excercise for?")
+alarm=input("What text would you like to come up when the LEDS tell you your exercise is over?")
+def stopwatch(seconds):
+    start = time.time()
+
+    elapsed = 0
+    while elapsed < seconds:
+        elapsed = time.time() - start
+        print "loop cycle time: %f, seconds count: %02d" % (time.clock() , elapsed) 
+        time.sleep(1)  
+
+stopwatch(pimetre)
+
+sense.show_message(alarm)
